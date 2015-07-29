@@ -54,5 +54,17 @@ Now, you can add a new git repository to be handled by Jenkins. These are the st
 5. In the `Build` section, introduce the following `Goals and options`: *clean deploy*
 6. Select `Email Notification` and include the recipients  
 
+1. Select `New Item`
+2. Introduce the name of the project and select the type of project (usually *Maven Project*)
+3. Select `Discard Old Builds` and set the Max number of builds to keep (usually 5)
+4. Enter the URL of the `GitHub project`.
+5. Select `Git` as `Source Code Management`
+  1. Introduce the url from github
+  2. Select the credential
+2. In the `Build Triggers` section, select *Build whenever a SNAPSHOT dependency is built* and *Build when a change is pushed to GitHub*
+3. In the `Build` section, introduce the following `Goals and options`: *clean deploy*
+4. Select `Email Notification` and include the recipients
+
+
 Then, when you push code to master branch in Github, a new build execution is created in Jenkins automatically.
 
